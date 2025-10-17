@@ -296,7 +296,7 @@ export const Contact = () => {
                       <input
                         type="text"
                         required
-                        className="w-full px-4 py-3 bg-secondary border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-cyan transition-colors"
+                    className="w-full px-4 py-3 bg-white border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-cyan transition-colors"
                         placeholder="Your first name"
                       />
                     </div>
@@ -305,7 +305,7 @@ export const Contact = () => {
                       <input
                         type="text"
                         required
-                        className="w-full px-4 py-3 bg-secondary border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-cyan transition-colors"
+                    className="w-full px-4 py-3 bg-white border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-cyan transition-colors"
                         placeholder="Your last name"
                       />
                     </div>
@@ -316,7 +316,7 @@ export const Contact = () => {
                     <input
                       type="email"
                       required
-                      className="w-full px-4 py-3 bg-secondary border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-cyan transition-colors"
+                    className="w-full px-4 py-3 bg-white border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-cyan transition-colors"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -325,7 +325,7 @@ export const Contact = () => {
                     <label className="block text-sm font-medium mb-2">Phone Number</label>
                     <input
                       type="tel"
-                      className="w-full px-4 py-3 bg-secondary border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-cyan transition-colors"
+                    className="w-full px-4 py-3 bg-white border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-cyan transition-colors"
                       placeholder="+1 (555) 123-4567"
                     />
                   </div>
@@ -334,14 +334,14 @@ export const Contact = () => {
                     <label className="block text-sm font-medium mb-2">Company</label>
                     <input
                       type="text"
-                      className="w-full px-4 py-3 bg-secondary border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-cyan transition-colors"
+                    className="w-full px-4 py-3 bg-white border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-cyan transition-colors"
                       placeholder="Your company name"
                     />
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium mb-2">Service Interest</label>
-                    <select className="w-full px-4 py-3 bg-secondary border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-cyan transition-colors">
+                    <select className="w-full px-4 py-3 bg-white border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-cyan transition-colors">
                       <option>Select a service</option>
                       <option>AI Receptionist</option>
                       <option>WhatsApp Automation</option>
@@ -359,7 +359,7 @@ export const Contact = () => {
                     <textarea
                       rows={5}
                       required
-                      className="w-full px-4 py-3 bg-secondary border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-cyan transition-colors resize-none"
+                    className="w-full px-4 py-3 bg-white border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-cyan transition-colors resize-none"
                       placeholder="Tell us about your business needs and how we can help..."
                     />
                   </div>
