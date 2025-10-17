@@ -40,9 +40,9 @@ export const Contact = () => {
       title: "Email Support",
       description: "Detailed inquiries and documentation",
       details: [
-        "info@rodely.ai",
-        "support@rodely.ai",
-        "sales@rodely.ai"
+        "info@rodely.tech",
+        "support@rodely.tech",
+        "sales@rodely.tech"
       ],
       action: "Send Email",
       color: "brand-cyan"
@@ -212,14 +212,14 @@ export const Contact = () => {
                     <div>
                       <h3 className="font-semibold text-lg mb-2">Email Addresses</h3>
                       <div className="space-y-1">
-                        <a href="mailto:info@rodely.ai" className="text-muted-foreground hover:text-brand-cyan transition-colors block">
-                          info@rodely.ai
+                        <a href="mailto:info@rodely.tech" className="text-muted-foreground hover:text-brand-cyan transition-colors block">
+                          info@rodely.tech
                         </a>
-                        <a href="mailto:support@rodely.ai" className="text-muted-foreground hover:text-brand-cyan transition-colors block">
-                          support@rodely.ai
+                        <a href="mailto:support@rodely.tech" className="text-muted-foreground hover:text-brand-cyan transition-colors block">
+                          support@rodely.tech
                         </a>
-                        <a href="mailto:sales@rodely.ai" className="text-muted-foreground hover:text-brand-cyan transition-colors block">
-                          sales@rodely.ai
+                        <a href="mailto:sales@rodely.tech" className="text-muted-foreground hover:text-brand-cyan transition-colors block">
+                          sales@rodely.tech
                         </a>
                       </div>
                     </div>

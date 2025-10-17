@@ -103,7 +103,7 @@ export const Footer = () => {
                 <Youtube className="w-5 h-5 text-red-500 group-hover:scale-110 transition-transform" />
               </a>
               <a
-                href="mailto:info@rodely.ai"
+                href="mailto:info@rodely.tech"
                 className="p-3 bg-primary/10 hover:bg-primary/20 rounded-lg transition-colors group"
                 aria-label="Email"
               >
