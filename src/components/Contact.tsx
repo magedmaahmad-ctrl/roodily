@@ -429,7 +429,7 @@ export const Contact = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-brand-teal"
+              className="border-white text-white bg-transparent hover:bg-white hover:text-brand-teal"
               onClick={() => window.open('https://wa.me/01148899442')}
             >
               <MessageSquare className="mr-2" />
