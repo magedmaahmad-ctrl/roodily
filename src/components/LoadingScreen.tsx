@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Zap, Brain, Cpu, Network } from "lucide-react";
+import { Cat, Zap, Heart, Star } from "lucide-react";
 
 interface LoadingScreenProps {
   onLoadComplete: () => void;
@@ -8,31 +8,27 @@ interface LoadingScreenProps {
 
 export const LoadingScreen = ({ onLoadComplete, message = "Initializing AI Systems..." }: LoadingScreenProps) => {
   const [progress, setProgress] = useState(0);
-  const [currentAnimation, setCurrentAnimation] = useState<'boot' | 'processing' | 'connecting' | 'ready'>('boot');
+  const [currentAnimation, setCurrentAnimation] = useState<'waving' | 'playing' | 'thinking'>('waving');
   const [loadingMessages] = useState([
-    "Initializing Neural Networks...",
-    "Loading AI Core Systems...",
-    "Establishing Quantum Connections...",
-    "Calibrating Holographic Interface...",
-    "Activating RODELY Protocol...",
-    "Systems Online - Welcome! 🚀"
+    "Initializing AI Systems...",
+    "Loading Neural Networks...",
+    "Preparing Robot Mascot...",
+    "Setting up Communication Channels...",
+    "Almost Ready! 🚀"
   ]);
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
-  const [rotationX, setRotationX] = useState(0);
-  const [rotationY, setRotationY] = useState(0);
 
   useEffect(() => {
     const progressInterval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(progressInterval);
-          setCurrentAnimation('ready');
-          setTimeout(onLoadComplete, 1000);
+          setTimeout(onLoadComplete, 800);
           return 100;
         }
-        return prev + 1.2;
+        return prev + 1.5;
       });
-    }, 30);
+    }, 25);
 
     return () => clearInterval(progressInterval);
   }, [onLoadComplete]);
@@ -40,7 +36,7 @@ export const LoadingScreen = ({ onLoadComplete, message = "Initializing AI Syste
   useEffect(() => {
     const messageInterval = setInterval(() => {
       setCurrentMessageIndex((prev) => (prev + 1) % loadingMessages.length);
-    }, 1500);
+    }, 1200);
 
     return () => clearInterval(messageInterval);
   }, [loadingMessages.length]);
@@ -49,93 +45,44 @@ export const LoadingScreen = ({ onLoadComplete, message = "Initializing AI Syste
     const animationInterval = setInterval(() => {
       setCurrentAnimation((prev) => {
         switch (prev) {
-          case 'boot': return 'processing';
-          case 'processing': return 'connecting';
-          case 'connecting': return 'boot';
-          case 'ready': return 'ready';
-          default: return 'boot';
+          case 'waving': return 'playing';
+          case 'playing': return 'thinking';
+          case 'thinking': return 'waving';
+          default: return 'waving';
         }
       });
-    }, 2500);
+    }, 2000);
 
     return () => clearInterval(animationInterval);
   }, []);
 
-  // 3D rotation effect based on mouse movement
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const centerX = window.innerWidth / 2;
-      const centerY = window.innerHeight / 2;
-      const deltaX = (e.clientX - centerX) / centerX;
-      const deltaY = (e.clientY - centerY) / centerY;
-      
-      setRotationY(deltaX * 15);
-      setRotationX(-deltaY * 10);
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-slate-900 via-brand-dark to-slate-800 perspective-1000">
-      {/* Enhanced 3D animated background */}
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-slate-900 via-brand-dark to-slate-800">
+      {/* Professional animated background */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Advanced grid pattern with 3D depth */}
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: `
-            linear-gradient(hsl(var(--brand-cyan)) 1px, transparent 1px),
-            linear-gradient(90deg, hsl(var(--brand-cyan)) 1px, transparent 1px),
-            linear-gradient(hsl(var(--brand-teal)) 1px, transparent 1px),
-            linear-gradient(90deg, hsl(var(--brand-teal)) 1px, transparent 1px)
-          `,
-          backgroundSize: '100px 100px, 100px 100px, 20px 20px, 20px 20px',
-          backgroundPosition: '0 0, 0 0, 100px 100px, 100px 100px'
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 opacity-5" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--brand-cyan)) 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
         }} />
         
-        {/* 3D floating particles with depth */}
-        {[...Array(20)].map((_, i) => (
+        {/* Elegant floating particles */}
+        {[...Array(12)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 rounded-full animate-float-3d"
+            className="absolute w-1 h-1 bg-brand-cyan/40 rounded-full animate-float"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              background: i % 3 === 0 ? 'hsl(var(--brand-cyan))' : 
-                         i % 3 === 1 ? 'hsl(var(--brand-teal))' : 'hsl(var(--brand-light))',
-              opacity: 0.6,
               animationDelay: `${Math.random() * 4}s`,
-              animationDuration: `${3 + Math.random() * 4}s`,
-              transform: `translateZ(${Math.random() * 200 - 100}px)`,
+              animationDuration: `${4 + Math.random() * 3}s`,
             }}
           />
         ))}
         
-        {/* Enhanced gradient orbs with 3D positioning */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-teal/10 rounded-full blur-3xl animate-float-3d transform-gpu" 
-             style={{ transform: 'translateZ(50px)' }} />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-brand-cyan/10 rounded-full blur-3xl animate-float-3d transform-gpu" 
-             style={{ transform: 'translateZ(-30px)', animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-brand-light/5 rounded-full blur-3xl animate-float-3d transform-gpu" 
-             style={{ transform: 'translateZ(20px)', animationDelay: '2s' }} />
-        
-        {/* Holographic data streams */}
-        <div className="absolute inset-0 overflow-hidden">
-          {[...Array(8)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute h-px bg-gradient-to-r from-transparent via-brand-cyan to-transparent animate-data-stream-3d"
-              style={{
-                top: `${20 + i * 10}%`,
-                left: `${-10 + i * 15}%`,
-                width: '30%',
-                animationDelay: `${i * 0.5}s`,
-                animationDuration: '3s',
-                transform: `rotateZ(${i * 5}deg) translateZ(${i * 10}px)`,
-              }}
-            />
-          ))}
-        </div>
+        {/* Subtle gradient orbs */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-teal/5 rounded-full blur-3xl animate-pulse-brand" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-brand-cyan/5 rounded-full blur-3xl animate-pulse-brand" style={{ animationDelay: '1s' }} />
       </div>
 
       <div className="text-center space-y-8 relative z-10">
