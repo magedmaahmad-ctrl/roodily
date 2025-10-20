@@ -228,7 +228,7 @@ export const Services = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
-            {mainServices.map((service, index) => (
+            {mainServices.slice(0, 2).map((service, index) => (
               <Card
                 key={index}
                 className={`p-8 bg-card/80 backdrop-blur-sm border-border hover:border-brand-cyan/50 transition-all duration-300 group relative ${
@@ -393,7 +393,7 @@ export const Services = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-brand-teal"
+              className="border-white text-white bg-transparent hover:bg-white hover:text-brand-teal"
               onClick={() => navigateWithLoading('/contact', 'Connecting with Sales...')}
             >
               <Calendar className="mr-2" />
